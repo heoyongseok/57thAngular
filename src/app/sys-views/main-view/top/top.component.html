@@ -22,7 +22,7 @@
         <!-- 2레벨 마이메뉴 -->
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menu.menuCode=='AA01')">
       <li *ngFor="let menuMy of dataArray.menuList">
-        <a href=`{{menu.menuUrl}}` class="dropdown-item" *ngIf="(menuMy.superMenuCode=='AA01')">{{menuMy.menuName}}</a>
+        <a routerLink={{menuMy.menuUrl}} class="dropdown-item" *ngIf="(menuMy.superMenuCode=='AA01')">{{menuMy.menuName}}</a>
   </li>
   </div>
 
@@ -39,31 +39,31 @@
       <!-- 3레벨 -->
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menuAcc.menuCode=='ACC01')">
     <li *ngFor="let menuAcc2 of dataArray.menuList">
-      <a class="dropdown-item" href=`{{menu.menuUrl}}`
+      <a class="dropdown-item" routerLink={{menuAcc2.menuUrl}}
         *ngIf="(menuAcc2.superMenuCode=='ACC01')">{{menuAcc2.menuName}}</a>
     </li>
   </div>
   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menuAcc.menuCode=='ACC02')">
     <li *ngFor="let menuAcc2 of dataArray.menuList">
-      <a class="dropdown-item" href=`{{menu.menuUrl}}`
+      <a class="dropdown-item" routerLink={{menuAcc2.menuUrl}}
         *ngIf="(menuAcc2.superMenuCode=='ACC02')">{{menuAcc2.menuName}}</a>
     </li>
   </div>
   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menuAcc.menuCode=='ACC03')">
     <li *ngFor="let menuAcc2 of dataArray.menuList">
-      <a class="dropdown-item" href=`{{menu.menuUrl}}`
+      <a class="dropdown-item" routerLink={{menuAcc2.menuUrl}}
         *ngIf="(menuAcc2.superMenuCode=='ACC03')">{{menuAcc2.menuName}}</a>
     </li>
   </div>
   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menuAcc.menuCode=='ACC04')">
     <li *ngFor="let menuAcc2 of dataArray.menuList">
-      <a class="dropdown-item" href=`{{menu.menuUrl}}`
+      <a class="dropdown-item" routerLink={{menuAcc2.menuUrl}}
         *ngIf="(menuAcc2.superMenuCode=='ACC04')">{{menuAcc2.menuName}}</a>
     </li>
   </div>
   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menuAcc.menuCode=='ACC05')">
     <li *ngFor="let menuAcc2 of dataArray.menuList">
-      <a class="dropdown-item" href=`{{menu.menuUrl}}`
+      <a class="dropdown-item" routerLink={{menuAcc2.menuUrl}}
         *ngIf="(menuAcc2.superMenuCode=='ACC05')">{{menuAcc2.menuName}}</a>
     </li>
   </div>
@@ -78,27 +78,27 @@
       <!-- 3레벨 -->
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menuHr.menuCode=='HR01')">
     <li *ngFor="let menuHr2 of dataArray.menuList">
-      <a class="dropdown-item" href=`{{menu.menuUrl}}` *ngIf="(menuHr2.superMenuCode=='HR01')">{{menuHr2.menuName}}</a>
+      <a class="dropdown-item" routerLink={{menuHr2.menuUrl}} *ngIf="(menuHr2.superMenuCode=='HR01')">{{menuHr2.menuName}}</a>
     </li>
   </div>
   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menuHr.menuCode=='HR02')">
     <li *ngFor="let menuHr2 of dataArray.menuList">
-      <a class="dropdown-item" href=`{{menu.menuUrl}}` *ngIf="(menuHr2.superMenuCode=='HR02')">{{menuHr2.menuName}}</a>
+      <a class="dropdown-item" routerLink={{menuHr2.menuUrl}} *ngIf="(menuHr2.superMenuCode=='HR02')">{{menuHr2.menuName}}</a>
     </li>
   </div>
   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menuHr.menuCode=='HR03')">
     <li *ngFor="let menuHr2 of dataArray.menuList">
-      <a class="dropdown-item" href=`{{menu.menuUrl}}` *ngIf="(menuHr2.superMenuCode=='HR03')">{{menuHr2.menuName}}</a>
+      <a class="dropdown-item" routerLink={{menuHr2.menuUrl}} *ngIf="(menuHr2.superMenuCode=='HR03')">{{menuHr2.menuName}}</a>
     </li>
   </div>
   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menuHr.menuCode=='HR04')">
     <li *ngFor="let menuHr2 of dataArray.menuList">
-      <a class="dropdown-item" href=`{{menu.menuUrl}}` *ngIf="(menuHr2.superMenuCode=='HR04')">{{menuHr2.menuName}}</a>
+      <a class="dropdown-item" routerLink={{menuHr2.menuUrl}} *ngIf="(menuHr2.superMenuCode=='HR04')">{{menuHr2.menuName}}</a>
     </li>
   </div>
   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menuHr.menuCode=='HR05')">
     <li *ngFor="let menuHr2 of dataArray.menuList">
-      <a class="dropdown-item" href=`{{menu.menuUrl}}` *ngIf="(menuHr2.superMenuCode=='HR05')">{{menuHr2.menuName}}</a>
+      <a class="dropdown-item" routerLink={{menuHr2.menuUrl}} *ngIf="(menuHr2.superMenuCode=='HR05')">{{menuHr2.menuName}}</a>
     </li>
   </div>
 
@@ -114,19 +114,19 @@
       <!-- 3레벨 -->
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menuLogi.menuCode=='LOGI01')">
     <li *ngFor="let menuLogi2 of dataArray.menuList">
-      <a class="dropdown-item" href=`{{menu.menuUrl}}`
+      <a class="dropdown-item" routerLink={{menuLogi2.menuUrl}}
         *ngIf="(menuLogi2.superMenuCode=='LOGI01')">{{menuLogi2.menuName}}</a>
     </li>
   </div>
   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menuLogi.menuCode=='LOGI02')">
     <li *ngFor="let menuLogi2 of dataArray.menuList">
-      <a class="dropdown-item" href=`{{menu.menuUrl}}`
+      <a class="dropdown-item" routerLink={{menuLogi2.menuUrl}}
         *ngIf="(menuLogi2.superMenuCode=='LOGI02')">{{menuLogi2.menuName}}</a>
     </li>
   </div>
   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menuLogi.menuCode=='LOGI03')">
     <li *ngFor="let menuLogi2 of dataArray.menuList">
-      <a class="dropdown-item" href=`{{menu.menuUrl}}`
+      <a class="dropdown-item" routerLink={{menuLogi2.menuUrl}}
         *ngIf="(menuLogi2.superMenuCode=='LOGI03')">{{menuLogi2.menuName}}</a>
     </li>
   </div>
@@ -145,13 +145,13 @@
       <!-- 3레벨 -->
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menuSys.menuCode=='SYS0101')">
     <li *ngFor="let menuSys2 of dataArray.menuList">
-      <a class="dropdown-item" href=`{{menu.menuUrl}}`
+      <a class="dropdown-item" routerLink={{menuSys2.menuUrl}}
         *ngIf="(menuSys2.superMenuCode=='SYS0101')">{{menuSys2.menuName}}</a>
     </li>
   </div>
   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="(menuSys.menuCode=='SYS0102')">
     <li *ngFor="let menuSys2 of dataArray.menuList">
-      <a class="dropdown-item" href=`{{menu.menuUrl}}`
+      <a class="dropdown-item" routerLink={{menuSys2.menuUrl}}
         *ngIf="(menuSys2.superMenuCode=='SYS0102')">{{menuSys2.menuName}}</a>
     </li>
   </div>

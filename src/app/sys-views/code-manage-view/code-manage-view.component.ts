@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 
 import { AgGridNg2 } from 'ag-grid-angular';
-import { HttpClient } from '@angular/common/http';
+
 import { SysService } from 'src/app/common/svc/sys.service';
-import { AppStore } from 'src/app/common/redux/core/app.store';
 import { Store } from 'redux';
-import { AppState } from 'src/app/common/redux/core/app.state';
+import { HttpClient } from '@angular/common/http';
+import { dataStore } from 'src/app/common/redux/core/code.store';
+import { dataState } from 'src/app/common/redux/core/code.state';
+import * as InsertActions from 'src/app/common/redux/core/codedata.action';
 
 @Component({
   selector: 'app-code-manage-view',
@@ -18,24 +20,24 @@ export class CodeManageViewComponent implements OnInit {
   title = 'angularTest';
   sysService:SysService;
   counter: number;
-  constructor(public http:HttpClient, @Inject(AppStore) private store: Store<AppState>) {
+  constructor(public http:HttpClient, @Inject(dataStore) private store: Store<dataState>) {
     this.sysService=new SysService(http);
-    alert("CodeManageViewComponent 의 constructor 진입");
-    store.subscribe(() => this.readState());
-    this.readState();
+     store.subscribe(() => this. redux());
+    //this.readState();
    }
 
-  private dataArray = [];
+  public dataArray = [];
   ngOnInit() {
     this.Http();
   }
-
+a="HR01";
   Http(){
-    this.sysService.transaction("findCodeList.do","","a=HR01 b=HR02").subscribe((result : any[])=>{
+    this.sysService.transaction("findCodeList.do","","from="+this.a+" b=HR02").subscribe((result : any[])=>{
     this.dataArray = result;
     console.log(this.dataArray);
+    this.readState();  
     });
-      
+    
   }
 ngDoCheck(){
 
@@ -50,8 +52,8 @@ ngDoCheck(){
 
 onCellClick(params:any){
   const selectedNodes = this.agGrid.api.getSelectedNodes();
-  const selectedData = selectedNodes.map( node => node.data);
-alert(selectedNodes);
+  const selectedData = selectedNodes.map( node => node.id);
+alert(selectedData);
 }
 
 addRows(){
@@ -111,10 +113,10 @@ getRowStyle = function(params) {
     {headerName: 'status', field: 'status'}
   ];
   readState() {
-    alert("CodeManageViewComponent 의 readState 함수 작동");
-    const state: AppState = this.store.getState() as AppState;
-    this.counter = state.counter;
+     this.store.dispatch(InsertActions.insert(this.dataArray));
    
   }
-
+  redux(){
+    const state: dataState = this.store.getState() as dataState;
+  }
 }

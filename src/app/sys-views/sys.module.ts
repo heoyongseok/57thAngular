@@ -13,17 +13,21 @@ import { AgGridModule } from 'ag-grid-angular';
 import { RouterModule } from '@angular/router';
 import { DemoMaterialModule } from '../common/shared/material.module';
 import { ReduxTestComponent } from './redux-test-view/redux-test/redux-test.component';
+import { CutomerViewComponent } from './cutomer-view/cutomer-view.component';
 
-const CORE_COMPONENTS = [ReduxTestComponent,CodeManageViewComponent,CustomerManageViewComponent,MenuTreeComponent,LoginFormComponent,TopComponent,FooterComponent]
+const CORE_COMPONENTS = [ReduxTestComponent,
+  CodeManageViewComponent,CustomerManageViewComponent,
+  MenuTreeComponent,LoginFormComponent,TopComponent,
+  FooterComponent,CutomerViewComponent]
 
 
 @NgModule({
   declarations: [CodeManageViewComponent, CustomerManageViewComponent
     ,MenuTreeComponent,LoginFormComponent
     ,TopComponent, FooterComponent
-    , ReduxTestComponent,ReduxTestComponent],
+    , ReduxTestComponent,ReduxTestComponent, CutomerViewComponent],
   imports: [
-    CommonModule,RouterModule,AgGridModule.withComponents([]),FormsModule,NgbModule,DemoMaterialModule
+    CommonModule,RouterModule ,AgGridModule.withComponents([]),FormsModule,NgbModule,DemoMaterialModule
   ],
   exports: CORE_COMPONENTS
 })

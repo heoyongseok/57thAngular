@@ -14,6 +14,7 @@ const initialState: AppState = { counter: 0 };
 // Create our reducer that will handle changes to the state
 export const counterReducer: Reducer<AppState> =
   (state: AppState = initialState, action: Action): AppState => {
+  //  alert("counterReducer 작동");
     switch (action.type) {
     case INCREMENT:
       return Object.assign({}, state, { counter: state.counter + 1 });

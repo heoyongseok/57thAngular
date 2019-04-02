@@ -5,11 +5,12 @@
   </h1> -->
   <app-top></app-top>
   <div class="container-fluid">
-    <div class="row">
-        <app-menu-tree></app-menu-tree>
-        <main class="col-10 "> 
+  <table><tr><td>
+        <app-menu-tree></app-menu-tree></td><td>
+        <main class="col-10 ">
         <router-outlet></router-outlet>
         </main>
+      </td></tr></table>
+      <app-footer></app-footer>
   </div>
-  </div>
-  <app-footer></app-footer>
+

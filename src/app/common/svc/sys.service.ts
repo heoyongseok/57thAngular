@@ -13,7 +13,7 @@ export class SysService {
   transaction(strUrl:string,indata:string,parameters:string){
     var pramMap= new Map<string,string>();
     var paramArray=new Array();
-    var url="http://localhost:8282/57thERP/sys/";
+    var url="/sys/";
 
     url=url+strUrl;
     if(indata==undefined||parameters==undefined){
@@ -25,16 +25,11 @@ export class SysService {
       var params:string[];
 
       params=parameters.split(" ");
-      //alert(params.length);
-       params.forEach(element => {
+         params.forEach(element => {
         var key:string;
         key=element.substring(0,element.search("="));
         var val=element.substring(element.search("=")+1,element.length);
-      //alert(key);
-       // alert(val);
-      paramArray.push(key);
-      paramArray.push(val); 
-      pramMap.set(key,val);
+       pramMap.set(key,val);
      console.log(pramMap);
     });
      console.log(JSON.stringify(paramArray));

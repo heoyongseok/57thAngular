@@ -2,7 +2,7 @@ import { InjectionToken } from '@angular/core';
 import {
   createStore,
   Store,
-  StoreEnhancer,
+
  } from 'redux';
 
 import {
@@ -10,17 +10,14 @@ import {
 } from './counter.reducer';
 import { AppState } from './app.state';
 
-export const AppStore = new InjectionToken('App.store');
+export const AppStore = new InjectionToken('App.aaa');
 
-const devtools: StoreEnhancer<AppState> =
-  window['devToolsExtension'] ?
-  window['devToolsExtension']() : f => f;
 
 export function createAppStore(): Store<AppState> {
-  alert("AppStore의createAppStore함수 작동");
+//  alert("AppStore의createAppStore함수 작동");
   return createStore<AppState,null,null,null>(
-    reducer
-  );
+    reducer,(window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
+    (window as any).__REDUX_DEVTOOLS_EXTENSION__())
 }
 
 export const appStoreProviders = [

@@ -58,6 +58,7 @@ export class LoginFormComponent implements OnInit {
     ];
   login(){
     alert("aaaaa")
+    location.replace("");
   }
     showModalFunc(){
     

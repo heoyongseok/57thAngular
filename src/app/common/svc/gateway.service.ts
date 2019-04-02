@@ -15,13 +15,15 @@ export class GatewayService {
  * @inData {string}
  * @parameters {Map<string,string>}
  */
-  send(url:string,inData:string,parameters:Map<string,string>){
+  send(strUrl:string,inData:string,parameters:Map<string,string>){
+  var url="http://localhost:8282/57thERPangular";
+  url=url+strUrl;
   this.httpParams=new HttpParams().set("inData",inData);
   if(parameters!=null){
   if(parameters.size>0){
     parameters.forEach ((val,key,map)=>{
       console.log(key);
-      this.httpParams=new HttpParams().set(key,val);
+      this.httpParams=this.httpParams.append(key,val);
     });
   }
 }

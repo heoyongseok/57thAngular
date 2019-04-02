@@ -43,6 +43,7 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+import { DoubleDatePickerComponent } from './date-pickers/double-date-picker/double-date-picker.component';
 
 @NgModule({
   exports: [
@@ -88,7 +89,8 @@ import {
     MatTreeModule,
     PortalModule,
     ScrollingModule,
-  ]
+  ],
+  declarations: [DoubleDatePickerComponent]
 })
 export class DemoMaterialModule {}
 

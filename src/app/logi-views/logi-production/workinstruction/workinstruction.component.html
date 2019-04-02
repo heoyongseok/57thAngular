@@ -1,0 +1,24 @@
+<ag-grid-angular 
+  #mrpGatheringGrid
+  style="width: 1300px; height: 500px; " 
+  class="ag-theme-balham"
+  [rowData]=mrpGatheringList
+  [columnDefs]="mrpGatheringColumnDefs"
+  [getRowStyle]="getRowStyle"
+  rowSelection="multiple"
+  (rowClicked)="mrpGatheringGrid_clicked($event)"
+   >
+</ag-grid-angular>
+
+<button class="btn btn-info" (click)="saveBtn()">저장</button>
+
+<ag-grid-angular 
+  #workInstructionGrid
+  style="width: 1300px; height: 500px; " 
+  class="ag-theme-balham"
+  [rowData]=materialCheckTemp
+  [columnDefs]="workInstructionColumnDefs"
+  [getRowStyle]="getRowStyle"
+  rowSelection="multiple"
+   >
+</ag-grid-angular>
